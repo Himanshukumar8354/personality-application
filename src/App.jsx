@@ -9,7 +9,7 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Feedback from './pages/feedback';
 import ResetPassword from './components/ResetPassword';
-
+import PrivateRoute from './utils/PrivateRoute';
 
 const AuthRedirect = () => {
   const navigate = useNavigate();
@@ -40,6 +40,13 @@ function App() {
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/login" element={<Login />} />
           <Route path="/feedback" element={<Feedback />} />
+
+          {/* Private Route for Results */}
+           
+            <Route path="/quiz" element={<PrivateRoute><Quiz /></PrivateRoute>} />
+           <Route path="/results" element={<PrivateRoute><Results /></PrivateRoute>} />
+          <Route path="/feedback" element={<PrivateRoute><Feedback /></PrivateRoute>} />
+  
         </Routes>
       </div>
     </Router>

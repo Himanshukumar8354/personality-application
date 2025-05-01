@@ -20,6 +20,24 @@ const Results = () => {
     html2pdf().from(element).save('personality-results.pdf');
   };
 
+
+
+  const submitResults = async (mbtiType, bigFiveScores) => {
+    const userId = localStorage.getItem('userId');
+  
+    const res = await fetch('http://localhost:5000/api/results', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ userId, mbtiType, bigFive: bigFiveScores }),
+    });
+  
+    const data = await res.json();
+    console.log('Result submitted:', data);
+  };
+  
+
  
   return (
     <div className="p-6 max-w-3xl mx-auto text-center">

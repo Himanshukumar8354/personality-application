@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import BackgroundLayout from '../components/BackgroundLayout'; // Sahi path!
+import BackgroundLayout from '../components/BackgroundLayout'; // Ensure this wraps a blurred background
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -34,7 +34,7 @@ const Signup = () => {
     setErrors({});
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
@@ -55,12 +55,11 @@ const Signup = () => {
     }, 1500);
   };
 
-  
 
   return (
     <BackgroundLayout>
-      <div className="min-h-screen flex items-center justify-center px-4">
-        <div className="bg-white/80 backdrop-blur-md shadow-2xl rounded-3xl p-8 max-w-md w-full border">
+      <div className="flex items-center justify-left  min-h-screen px-4">
+        <div className="bg-white/80 backdrop-blur-lg shadow-2xl rounded-3xl p-8 max-w-md w-full border border-gray-200">
           <h1 className="text-3xl font-bold mb-6 text-blue-700 text-center">Create an Account</h1>
 
           <form onSubmit={handleSubmit} className="space-y-4">

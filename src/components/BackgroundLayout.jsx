@@ -10,10 +10,14 @@ const BackgroundLayout = ({ children }) => {
       </div>
 
       {/* NO blur, NO overlay now */}
-
-      {/* Form Content */}
-      <div className="relative z-20 flex items-center justify-center min-h-screen">
-        {children}
+      <div className="relative min-h-screen bg-cover bg-center" style={{ backgroundImage: "url('/your-background.jpg')" }}>
+        <div className="absolute inset-0 bg-black/30 backdrop-blur-sm" />
+        <div className="relative z-10">
+          {/* Form Content */}
+          <div className="relative z-20 flex items-center justify-center min-h-screen">
+            {children}
+          </div>
+        </div>
       </div>
     </div>
   );

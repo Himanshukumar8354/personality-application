@@ -51,6 +51,18 @@ const Login = () => {
       setLoginError('Wrong email or password.');
     }
   };
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    const res = await fetch('http://localhost:5000/api/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(form),
+    });
+    const data = await res.json();
+    localStorage.setItem('token', data.token);
+    localStorage.setItem('userId', data.userId);
+    console.log('Login Success:', data);
+  };
 
   return (
     <BackgroundLayout>

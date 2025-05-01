@@ -5,7 +5,7 @@ const mbtiQuestions = [
       { text: "1 hr", score: 1 },
       { text: "2 hrs", score: 2 },
       { text: "3 hrs", score: 3 },
-      { text: "2 hrs", score: 2 },
+      { text: "4 hrs", score: 2 },
       { text: "More than these", score: 2 },
     ],
   },
@@ -36,7 +36,7 @@ const mbtiQuestions = [
     options: [
       { text: "Jio Hotstar", score: 2 },
       { text: "Kuku Tv", score: 2 },
-      { text: "ZEE0", score: 3 },
+      { text: "ZEE5", score: 3 },
       { text: "YouTube", score: 0 },
       { text: "Elelo", score: 2 },
       { text: "Others", score: 2 },
