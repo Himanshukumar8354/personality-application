@@ -7,46 +7,50 @@ import About from './pages/About';
 import Header from './components/Header';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
-import Feedback from './pages/feedback';
+import Feedback from './pages/Feedback';
 import ResetPassword from './components/ResetPassword';
-import PrivateRoute from './utils/PrivateRoute';
-
+import Teammember from './pages/Teammember'; // Import the Teammember component
+import ProtectedRoute from './routes/ProtectedRoute';
 const AuthRedirect = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
     const isLoggedIn = localStorage.getItem('loggedInUser');
-    if (!isLoggedIn && window.location.pathname !== '/signup') {
-      navigate('/signup' + '');
+    if (!isLoggedIn && window.location.pathname !== '/signup' && window.location.pathname !== '/login') {
+      navigate('/signup'); // Correcting navigation path
     }
-  }, []);
+  }, [navigate]);
 
   return null;
 };
 
 function App() {
   return (
-    <Router>
+    <Router basename="/personality-application"> {/* Use basename if app is served from a subdirectory */}
       <div className="min-h-screen bg-gray-50 text-gray-900">
         <Header />
         <AuthRedirect />
+        
         <Routes>
+          {/* Define routes for each page */}
           <Route path="/" element={<Signup />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/quiz" element={<Quiz />} />
+          
           <Route path="/results" element={<Results />} />
           <Route path="/about" element={<About />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/login" element={<Login />} />
           <Route path="/feedback" element={<Feedback />} />
-
-          {/* Private Route for Results */}
-           
-            <Route path="/quiz" element={<PrivateRoute><Quiz /></PrivateRoute>} />
-           <Route path="/results" element={<PrivateRoute><Results /></PrivateRoute>} />
-          <Route path="/feedback" element={<PrivateRoute><Feedback /></PrivateRoute>} />
-  
+          <Route path="/teammember" element={<Teammember />} />
+          <Route
+          path="/quiz"
+          element={
+            <ProtectedRoute>
+              <Quiz/>
+            </ProtectedRoute>
+          }
+        /> {/* Add the Teammember route */}
         </Routes>
       </div>
     </Router>

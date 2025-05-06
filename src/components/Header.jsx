@@ -12,11 +12,10 @@ const Header = () => {
           <div className="space-x-4">
         
           <Link to="/" className="hover:underline">Home</Link>
-        
-          <Link to="/results" className="hover:underline">Results</Link>
+         <Link to="/results" className="hover:underline">Results</Link>
           <Link to="/about" className="hover:underline">About</Link>
           <Link to="/feedback" className="hover:underline">Feedback</Link>
-
+          <Link to="/teammember" className="hover:underline">Team</Link>
           </div>
         </nav>
       </header>

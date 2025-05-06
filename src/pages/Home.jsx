@@ -15,7 +15,8 @@ const Home = () => {
     if (!loggedInUser) {
       setRedirectMessage('Please sign up first...');
       setTimeout(() => {
-        navigate('/signup');
+        navigate('/signup', { replace: true });
+      
       }, 2000);
     } else {
       setCheckingLogin(false); // ✅ User is logged in, show Home
@@ -24,7 +25,8 @@ const Home = () => {
 
   const startQuiz = (type) => {
     setQuizType(type);
-    navigate('/quiz');
+    navigate('/quiz', { replace: true });
+
   };
 
   if (checkingLogin) {
@@ -38,7 +40,7 @@ const Home = () => {
         <p className="text-lg text-red-600 font-medium">{redirectMessage}</p>
       </div>
     );
-  }
+  }             
 
   return (
     <div className="p-4 max-w-2xl mx-auto text-center">

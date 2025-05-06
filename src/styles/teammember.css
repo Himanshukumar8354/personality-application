@@ -1,0 +1,57 @@
+.team-container {
+    padding: 40px;
+    background-color: #f0f0f0;
+    text-align: center;
+  }
+  
+  .team-title {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+  
+  .team-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .team-box {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    padding: 20px;
+    transition: transform 0.3s ease;
+  }
+  
+  .team-box:hover {
+    transform: translateY(-5px);
+  }
+  
+  .image-container {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* covers box nicely */
+    border-radius: 10px;
+  }
+  
+  .team-box h2 {
+    margin: 10px 0 5px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .team-box p {
+    color: #666;
+    font-size: 16px;
+  }
+  

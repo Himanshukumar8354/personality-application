@@ -7,6 +7,7 @@ const bigFiveQuestions = [
       { text: "3 hrs", score: 3 },
       { text: "4 hrs", score: 2 },
       { text: "More than these", score: 2 },
+
     ],
   },
   {
@@ -18,6 +19,7 @@ const bigFiveQuestions = [
       { text: "Yahoo", score: 2 },
       { text: "Yandex", score: 1 },
       { text: "Others application", score: 2 },
+      { text: "None", score: 0 },
     ],
   },
   {
@@ -29,10 +31,11 @@ const bigFiveQuestions = [
       { text: "Truecaller", score: 2 },
       { text: "Facebook Messenger", score: 3 },
       { text: "Others application", score: 2 },
+      { text: "None", score: 0 },
     ],
   },
   {
-    text: "2. Which entertainment application you preferred?",
+    text: "4. Which entertainment application you preferred?",
     options: [
       { text: "Jio Hotstar", score: 2 },
       { text: "Kuku Tv", score: 2 },
@@ -40,10 +43,11 @@ const bigFiveQuestions = [
       { text: "YouTube", score: 0 },
       { text: "Elelo", score: 2 },
       { text: "Others", score: 2 },
+      { text: "None", score: 0 },
     ],
   },
   {
-    text: "0. Which type of gaming application you like most?",
+    text: "5. Which type of gaming application you like most?",
     options: [
       { text: "Free Fire Max", score: 0 },
       { text: "Battlegrounds Mobile India (BGMI)", score: 0 },
@@ -51,6 +55,7 @@ const bigFiveQuestions = [
       { text: "Candy Crush Saga", score: 2 },
       { text: "Indian Bikes Driving", score: 2 },
       { text: "Others", score: 2 },
+      { text: "None", score: 0 },
     ],
   },
   {
@@ -62,6 +67,7 @@ const bigFiveQuestions = [
       { text: "ET Money", score: 3 },
       { text: "Kissht", score: 2 },
       { text: "Others", score: 2 },
+      { text: "None", score: 0 },
     ],
   },
   {
@@ -73,6 +79,7 @@ const bigFiveQuestions = [
       { text: "Myntra", score: 2 },
       { text: "Shopsy", score: 3 },
       { text: "Others", score: 2 },
+      { text: "None", score: 0 },
     ],
   },
   {
@@ -84,6 +91,7 @@ const bigFiveQuestions = [
       { text: "FLO Period & Pregnancy Tracker", score: 3 },
       { text: "Fastrack Smart World", score: 2 },
       { text: "Others", score: 2 },
+      { text: "None", score: 0 },
     ],
   },
   {
@@ -95,6 +103,7 @@ const bigFiveQuestions = [
       { text: "IRCTC Rail Connect", score: 3 },
       { text: "redBus", score: 3 },
       { text: "Others", score: 2 },
+      { text: "None", score: 0 },
     ],
   },
   {
@@ -106,6 +115,7 @@ const bigFiveQuestions = [
       { text: "Vedantu", score: 3 },
       { text: "Khan Academy", score: 0 },
       { text: "Others", score: 2 },
+      { text: "None", score: 0 },
     ],
   },
   {
@@ -117,6 +127,7 @@ const bigFiveQuestions = [
       { text: "Jio Saavan", score: 2 },
       { text: "Gaana", score: 3 },
       { text: "Others", score: 2 },
+      { text: "None", score: 0 },
     ],
   },
   {
@@ -128,6 +139,7 @@ const bigFiveQuestions = [
       { text: "Inshorts", score: 0 },
       { text: "Google News", score: 0 },
       { text: "Others", score: 2 },
+      { text: "None", score: 0 },
     ],
   },
   {
@@ -139,10 +151,11 @@ const bigFiveQuestions = [
       { text: "Blinkit", score: 2 },
       { text: "Domino's Pizza India", score: 2 },
       { text: "Others", score: 2 },
+      { text: "None", score: 0 },
     ],
   },
   {
-    text: "12. Which navigation and maps application do you use frequently?",
+    text: "14. Which navigation and maps application do you use frequently?",
     options: [
       { text: "Google Maps", score: 0 },
       { text: "Waze", score: 2 },
@@ -150,10 +163,11 @@ const bigFiveQuestions = [
       { text: "Here WeGo", score: 3 },
       { text: "Sygic GPS Navigation & Maps", score: 3 },
       { text: "Others", score: 2 },
+      { text: "None", score: 0 },
     ],
   },
   {
-    text: "10. Which sports application you frequently use?",
+    text: "15. Which sports application you frequently use?",
     options: [
       { text: "Cricbuzz", score: 0 },
       { text: "CREX", score: 2 },
@@ -161,6 +175,7 @@ const bigFiveQuestions = [
       { text: "FanCode", score: 3 },
       { text: "Dream11", score: 0 },
       { text: "Others", score: 2 },
+      { text: "None", score: 0 },
     ],
   },
   {
@@ -172,6 +187,7 @@ const bigFiveQuestions = [
       { text: "YouTube", score: 0 },
       { text: "Twitter (X)", score: 2 },
       { text: "Others", score: 2 },
+      { text: "None", score: 0 },
     ],
   },
 ];

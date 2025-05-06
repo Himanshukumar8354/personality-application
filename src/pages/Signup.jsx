@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import BackgroundLayout from '../components/BackgroundLayout'; // Ensure this wraps a blurred background
 
@@ -9,6 +9,12 @@ const Signup = () => {
   const [submitted, setSubmitted] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
+   useEffect(() => {
+      const loggedInUser = localStorage.getItem('loggedInUser');
+      if (loggedInUser) {
+        navigate('/', { replace: true }); // already logged in, redirect to home
+      }
+    }, [navigate]);
   const validate = () => {
     const newErrors = {};
     const storedUsers = JSON.parse(localStorage.getItem('users')) || [];

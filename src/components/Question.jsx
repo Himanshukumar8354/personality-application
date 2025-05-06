@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const Question = ({ question, onAnswer, onBack, showBack, isLastQuestion, isFirstQuestion }) => {
+const Question = ({ question, onAnswer, onBack, showBack, isLastQuestion, isFirstQuestion, isAuthenticated }) => {
   const [selectedIndexes, setSelectedIndexes] = useState([]);
   const navigate = useNavigate();
 
@@ -20,8 +20,10 @@ const Question = ({ question, onAnswer, onBack, showBack, isLastQuestion, isFirs
   };
 
   const handleNextOrSubmit = () => {
-    const totalScore = selectedIndexes.reduce((sum, idx) => sum + question.options[idx].score, 0);
-    onAnswer(totalScore);
+    if (selectedIndexes.length > 0) {
+      const totalScore = selectedIndexes.reduce((sum, idx) => sum + question.options[idx].score, 0);
+      onAnswer(totalScore);
+    }
   };
 
   const handleBack = () => {
@@ -29,7 +31,13 @@ const Question = ({ question, onAnswer, onBack, showBack, isLastQuestion, isFirs
   };
 
   const handleHome = () => {
-    navigate('/');
+    if (isAuthenticated) {
+      // Navigate to home page if authenticated
+      navigate('/');
+    } else {
+      // Navigate to a page like '/welcome' or '/start' if not authenticated
+      navigate('/welcome');
+    }
   };
 
   return (
@@ -60,18 +68,26 @@ const Question = ({ question, onAnswer, onBack, showBack, isLastQuestion, isFirs
         )}
         {showBack && !isFirstQuestion && (
           <button
-            onClick={handleBack}
-            className="px-6 py-2 rounded-xl font-semibold text-white bg-gray-500 hover:bg-gray-700"
+            onClick={() => {
+              handleBack();
+            }}
+             className="px-6 py-2 rounded-xl font-semibold text-white bg-gray-500 hover:bg-gray-700"
           >
             Back
+          
           </button>
         )}
-        
+
         <button
           onClick={handleNextOrSubmit}
           className={`px-6 py-2 rounded-xl font-semibold text-white ${
-            isLastQuestion ? 'bg-blue-600 hover:bg-blue-800' : 'bg-green-600 hover:bg-green-700'
+            selectedIndexes.length === 0
+              ? 'bg-gray-400 cursor-not-allowed'
+              : isLastQuestion
+              ? 'bg-blue-600 hover:bg-blue-800'
+              : 'bg-green-600 hover:bg-green-700'
           }`}
+          disabled={selectedIndexes.length === 0}  // Disable until an option is selected
         >
           {isLastQuestion ? 'Submit' : 'Next'}
         </button>
@@ -80,4 +96,4 @@ const Question = ({ question, onAnswer, onBack, showBack, isLastQuestion, isFirs
   );
 };
 
-export default Question;  
+export default Question;

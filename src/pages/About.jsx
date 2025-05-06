@@ -58,7 +58,7 @@ const About = () => {
           <li><strong>🎨 Styling:</strong>  @tailwind CSS</li>
           <li><strong>🔀 Routing & State:</strong> React Router + Context API</li>
           <li><strong>📊 Visualization:</strong> Chart.js or Recharts</li>
-          <li><strong>🧩 Advanced Features:</strong> PDF export, sharing results , Download the results </li>
+          <li><strong>🧩 Advanced Features:</strong> 'Give feedback', Download the results </li>
     </ul>
   </div>
 
@@ -71,15 +71,7 @@ const About = () => {
 
   </div>
 
-  <div className="about-box">
-    <h2>Meet the Team</h2>
-    <ul className="team-list">
-          <li><strong>👤Tripti Tiwari</strong> – Project Lead & UI/UX Designer </li>
-          <li><strong>👤 Himanshu Kumar</strong> – Full Stack Developer</li>
-          <li><strong>👤 Rahul Reyon</strong> – Data Analyst & Visualization Specialist</li>
-          <li><strong>👤 Sandeep Kumar</strong> – Research & Quiz Content Developer</li>
-    </ul>
-  </div>
+
 
   <div className="about-box">
   <p>
@@ -92,28 +84,14 @@ const About = () => {
         </p>
   </div>
 
-  <div className="about-box">
-  <h2>Contact Us</h2>
-  <p>If you have any questions or feedback, feel free to reach out!</p>
-  <a href="mailto:tripti@example.com">📧 Tripti Tiwari – tripti@example.com</a>
-  <br />
-  <p>Or, if you're interested in collaborating on this project, don't hesitate to reach out!</p>
-  <a href="mailto:himanshukumar70222@gmail.com">📧 Himanshu Kumar – himanshukumar70222@gmail.com</a>
-  <br />
-  <p>We'd love to hear from you!</p>
-  <p>Thank you for your interest in our project!</p>
-  <br />
-  <p>For more information, please visit our GitHub repository:</p>
-  <a href="https://github.com/your_username/personality-app" target="_blank" rel="noopener noreferrer">
-    🔗 https://github.com/your_username/personality-app
-  </a>
+ 
   <br />
   <button className="feedback-button" onClick={handleFeedbackClick}>
     Give Feedback
   </button>
 </div>
 
-</div>
+
 
   );
 };
